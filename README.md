@@ -75,4 +75,4 @@ No known bugs
 To support me, you can contact me at <a href="https://www.gmail.com">philippokar@hotmail.co.uk</a>
 
 ## License
-[MIT © 2019](https://github.com/philipkariuki/instagram-clone/blob/master/LICENSE)
+[MIT © 2019](https://github.com/philipkariuki/moringa-awards/blob/master/LICENSE)
