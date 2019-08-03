@@ -1,1 +1,16 @@
-<h1> Moringa Awards </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Moringa Awards - {{title}}</title>
+  {% else %}
+    <title> Moringa Awards </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} <h1> Moringa Awards </h1> {%endblock%}
+</body>
+</html>
