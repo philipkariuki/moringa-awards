@@ -3,7 +3,52 @@
 {% block content %}
 {{block.super}}
 
-<h1>Index</h1>
+
+
+<div class="container">
+
+  <!-- Looping through news   -->
+  {% for jopre in allprojects %}
+
+  <div class="row">
+    <!-- displaying News articles -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center"> {{ jopre.title }} </h2>
+    </div>
+
+  </div>
+
+
+  <div class="card">
+        <div class="row">
+                <div class="col-lg-8">
+                    <img src="{{jopre.projimage.url}}" class="img-responsive" alt="">                    
+                </div>
+                <div class="col-lg-4">
+                        <h3><a href="{% url 'project' project.id %}">{{ jopre.projimage }}</a></h3>
+                        <p>{{jopre.description|truncatechars:500 | safe}} </p>
+                </div>
+        </div>
+        <div class="card-footer">
+            <p><small>{{ jopre.pub_date }}</small></p>
+        </div>
+    </div>
+
+
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Projects Posted yet</h2>
+  </div>
+  {% endfor %}
+
+
+
+
+
+
+
+
 
 {% endblock %}
 

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+
+<div class="container">
+
+  <div class="row" style="margin-top: 70px; margin-bottom: 120px;">
+    {% if projess%}
+      <h2>Found {{ projess|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 images for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row" style="margin-top: 20px; margin-bottom: 120px;">
+
+  {% if projess %}
+    {% for proj in projess %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{proj.title}}</h1>
+          <a href="{% url 'index' %} "><img src=" {{proj.projimage.url}} " class="img-fluid" alt="Image"></a>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+
+
+
+{% endblock%}
+

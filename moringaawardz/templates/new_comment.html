@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% load bootstrap3 %}
+
+
+
+{% block content%}
+
+{% for comments in comments_list%}
+
+
+ <style>
+      
+      .list-group {
+        font-size: 19px;
+
+      }
+
+     
+
+    </style>
+  <ul class="list-group">
+  <li class="list-group-item list-group-item-info">
+    {{comments.comments_id}}
+    <br><br>
+    <p class="text-right">Posted by {{comments.poster}} on:{{comments.date_posted.strftime('%B %d, %Y %r')}}</p>
+  </li>
+</ul>
+{% endfor%}
+
+
+
+
+
+
+<div class="container">
+
+  <div class="row">
+    
+    <div class="col-sm-8">
+      {% bootstrap_form form %}
+      <button type="submit">Comment</button>
+    </div>
+
+
+  </div>
+  
+</div>
+{% endblock %}
