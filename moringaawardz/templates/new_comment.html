@@ -22,7 +22,6 @@
   <li class="list-group-item list-group-item-info">
     {{comments.comments_id}}
     <br><br>
-    <p class="text-right">Posted by {{comments.poster}} on:{{comments.date_posted.strftime('%B %d, %Y %r')}}</p>
   </li>
 </ul>
 {% endfor%}
@@ -37,8 +36,11 @@
   <div class="row">
     
     <div class="col-sm-8">
-      {% bootstrap_form form %}
-      <button type="submit">Comment</button>
+      <form action="{%url 'new_comment'%}" method="post" enctype="multipart/form-data">
+      {%csrf_token%} {% bootstrap_form form %}
+      <form action="{%url 'new_comment'%}" method="post" enctype="multipart/form-data">
+      <button type="submit" class="btn btn-success">Comment</button>
+      </form>
     </div>
 
 
@@ -46,3 +48,4 @@
   
 </div>
 {% endblock %}
+

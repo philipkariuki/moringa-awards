@@ -11,6 +11,7 @@ urlpatterns=[
     url(r'^profile/',views.profile,name ='profile'),
     url(r'^profile_update/',views.profile_update,name='profile_update'),
     url(r'^search/', views.search_results, name='search_results'),
+    url(r'^new_comment/', views.new_comment, name='new_comment'),
 ]
 
 
