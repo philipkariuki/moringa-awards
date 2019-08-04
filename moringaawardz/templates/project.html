@@ -1,10 +1,40 @@
-<hr>
-{% for comment in post.comments.all %}
-    <div class="comment">
-        <div class="date">{{ comment.date_posted }}</div>
-        <strong>{{ comment.author }}</strong>
-        <p>{{ comment.comment_content|linebreaks }}</p>
+{% extends 'base.html'%}
+{% load bootstrap3%}
+{%block content%}
+
+
+
+{% for image in project %}
+
+<div class="container">
+    <div class="card">
+        <div class="row">
+                <div class="col-lg-8">
+                    <img src="{{image.projimage.url}}" class="img-responsive" alt="">                    
+                </div>
+                <div class="col-lg-4">
+                        <h3><a href="{% url 'project' image.id %}">{{ image.title }}</a></h3>
+                        <p>{{image.description|truncatechars:500 | safe}} </p>
+                        <p>Link: {{ image.link }} </p>
+                        <p>Link: {{ image.editor }} </p>
+
+                </div>
+        </div>
+        <div class="card-footer">
+            <p><small>{{ image.pub_date }}</small></p>
+        </div>
     </div>
+</div>
+    
+    <hr>
+
+
 {% empty %}
-    <p>No comments here yet :(</p>
+  <div class="row">
+    <h2 class="text-center">There are No Projects Posted yet</h2>
+  </div>
 {% endfor %}
+
+
+
+{% endblock%}

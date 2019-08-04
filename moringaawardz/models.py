@@ -21,8 +21,8 @@ class Project(models.Model):
     
     
     @classmethod
-    def get_projects(cls,date):
-        projos = cls.objects.filter(pub_date__date = date)
+    def get_projects(cls):
+        projos = cls.objects.all()
         return projos
 
 
@@ -95,5 +95,5 @@ class Profile(models.Model):
 
     def create_profile(sender,**kwargs):
         if kwargs['created']:
-            profile=cls.objects.create(name=kwargs['instance'])
+            profile=Profile.objects.create(name=kwargs['instance'])
     post_save.connect(create_profile,sender=User)

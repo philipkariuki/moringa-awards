@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 def index(request):
 	allprojects = Project.get_projects()
-	return render(request, 'index.html', {'allprojects': allprojects})
+	return render(request, 'project.html', {'project': allprojects})
 
 
 @login_required(login_url='/accounts/login/')
