@@ -1,7 +1,21 @@
 {% extends 'base.html'%}
 {% load bootstrap3%}
-{%block content%}
+{% load static%}
 
+
+{%block content%}
+{{block.super}}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/starrr.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'js/starrr.js' %}"></script>
+
+    
+</head>
 
 
 {% for image in project %}
@@ -17,6 +31,14 @@
                         <p>{{image.description|truncatechars:500 | safe}} </p>
                         <p>Link: {{ image.link }} </p>
                         <p>Link: {{ image.editor }} </p>
+
+                        <div class="my-rating"></div>
+							<h5>Click to rate:</h5>
+							<div class='starrr' id='star1'></div>
+							<div>&nbsp;
+							    <span class='your-choice-was' style='display: none;'>Your rating was <span class='choice'></span>.
+							    </span>
+							</div>
 
                 </div>
         </div>
@@ -48,6 +70,23 @@
 </div>
     
     <hr>
+
+
+
+
+<script>
+    $('#star1').starrr({
+      change: function(e, value){
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
+      }
+    });
+  </script>
+
 
 
 {% empty %}
