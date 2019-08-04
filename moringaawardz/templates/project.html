@@ -36,7 +36,8 @@
 							<h5>Click to rate:</h5>
 							<div class='starrr' id='star1'></div>
 							<div>&nbsp;
-							    <span class='your-choice-was' style='display: none;'>Your rating was <span class='choice'></span>.
+							    <span class='your-choice-was' style='display: none;'>
+							  Your rating was <span class='choice'></span>.
 							    </span>
 							</div>
 
@@ -44,29 +45,24 @@
         </div>
         <div class="card-footer">
             <p><small>{{ image.pub_date }}</small></p>
+            <h3>Comments:</h3>
+            <hr>
+
+	        <ul class="list-group">
+			  	<li class="list-group-item list-group-item-info">
+			    {{comments.comments_id}}
+			    <br><br>
+				 </li>
+			</ul>
+
+	        <hr>      
+
+	        <a class="btn btn-success btn-lg text-center" href="{% url 'new_comment' %}" style="margin-bottom: 150px"> Write a new Comment</a>
+
         </div>
     </div>
 
-     <div class="row">
-
-        <h3>Comments:</h3>
-        <hr>
-
-         <ul class="list-group">
-  <li class="list-group-item list-group-item-info">
-    {{comments.comments_id}}
-    <br><br>
-  </li>
-</ul>
-
-        <hr>
-
-       
-
-        <a class="btn btn-success btn-lg text-center" href="{% url 'new_comment' %}" style="margin-bottom: 150px"> Write a new Comment</a>
-        
-
-    </div>
+     
 </div>
     
     <hr>
