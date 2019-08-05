@@ -33,7 +33,7 @@
                 <div class="col-lg-4">
                         <h3>{{ image.title }}</h3>
                         <p>{{image.description|truncatechars:500 | safe}} </p>
-                        <p>Link:  <a href="{{ image.link }} "></a> </p>
+                        <p>Link:  <a href="{{ image.link }} ">{{image.link}}</a> </p>
                         <p>Posted by: {{ image.editor }} </p>
 
                         <div class="my-rating"></div>
