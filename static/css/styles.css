@@ -2,3 +2,10 @@ h1
 {
   color: orange;
 }
+
+.card h3 {
+	font-size: 25px !important;
+}
+.card p {
+	font-size: 15px !important;
+}
