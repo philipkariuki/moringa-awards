@@ -20,8 +20,8 @@ As a user, I would like to be able to do the following:
 ## Specifications
 | Behaviour | Input | Output |
 | --------------- | :----------:| --------: |
-| Display all photos | On home page load | Loads all the available photos |
-| New User Post | Click New Post button from navbar | User redirected to new post page with forms for new post, which when filled redirects to home page with the new post  |
+| Display all projects | On home page load | Loads all the available projects |
+| New User Project | Click New Project button from navbar | User redirected to new post page with forms for new project, which when filled redirects to home page with the new project  |
 | User registration | Fill required fields and click on register button | User's info is registered to the database and user is redirected to home page |
 | User login | Fill required fields and click on login button | User's info is confirmed with the database and user is redirected to home page, else if info doesn't match db records user is not able to login and access the home page |
 

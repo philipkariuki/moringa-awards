@@ -52,7 +52,7 @@ def profile_update(request):
 
 
 
-
+@login_required(login_url='/accounts/login/')
 def new_comment(request):
 
 	current_user = request.user
