@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def index(request):
 	allprojects = Project.get_projects()
 	return render(request, 'project.html', {'project': allprojects})
@@ -70,7 +71,7 @@ def new_comment(request):
 
 
 
-
+@login_required(login_url='/accounts/login/')
 def search_results(request):
 
     if 'projectsearch' in request.GET and request.GET["projectsearch"]:
