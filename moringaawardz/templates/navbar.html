@@ -14,6 +14,9 @@
 
 
 
+
+
+
 <nav class="navbar navbar-dark navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -21,7 +24,7 @@
         </div>
         <!-- Adding a search form  -->
         <div class="col-sm-4 col-md-4 navbar-right">
-            <form class="navbar-form" role="search" action="#">
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search Image" name="projectsearch">
                     <div class="input-group-btn">
