@@ -11,7 +11,7 @@ class Project(models.Model):
     title = models.CharField(max_length =60)
     description = HTMLField()
     link = models.CharField(max_length =60)
-    editor = models.ForeignKey(User, on_delete=models.CASCADE)
+    poster = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
     projimage = models.ImageField(upload_to = 'articles/', blank=True)
 

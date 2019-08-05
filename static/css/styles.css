@@ -9,3 +9,7 @@ h1
 .card p {
 	font-size: 15px !important;
 }
+.container {
+	margin-top: 100px !important;
+	margin-bottom: 45px !important;
+}

@@ -61,9 +61,9 @@ def new_comment(request):
 	if request.method == 'POST':
 		form = CommentForm(request.POST)
 		if form.is_valid():
-			profile = form.save(commit=False)
-			profile.user = current_user
-			profile.save()
+			comments = form.save(commit=False)
+			comments.user = current_user
+			comments.save()
 		return HttpResponseRedirect('/')
 	else:
 		form = CommentForm()
@@ -96,13 +96,14 @@ def new_project(request):
     if request.method == 'POST':
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            article = form.save(commit=False)
-            article.editor = current_user
-            article.save()
+            project = form.save(commit=False)
+            project.poster = current_user
+            project.save()
         return redirect('index')
     else:
         form = NewProjectForm()
     return render(request, 'new_project.html', {"form": form})
+
 
 
 
